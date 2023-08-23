@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zExxRG5roQxD7Cfp4FVlKUliovgMQKuwgYyL7fuTqfoMHT56KynmnuBJ0yL+Re4jyR8KOCCEy0joOXw2AaWMNA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\robin\\source\\repos\\potaooooo\\potaooooo\\potaooooo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\robin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512"
+  ],
+  "logs": []
+}

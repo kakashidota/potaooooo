@@ -1,0 +1,26 @@
+name: CICD workflow
+
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup .net Core
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Install dependecies
+        run: dotnet restore ./potaooooo/potaooooo.csproj
+
+      - name: Build project
+        run: dotnet build ./potaooooo/potaooooo.csproj --configuration Release
+
+      - name: Publish project
+        run: dotnet publish ./potaooooo/potaooooo.csproj --configuration Release --output ./publish
+
+
