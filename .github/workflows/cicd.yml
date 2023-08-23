@@ -4,15 +4,18 @@ name: CICD workflow
 on:
   workflow_dispatch
 
+env:
+  AZURE_WEB_APP: "ppotaotototoot"
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Setup .net Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 7.0.x
 
@@ -24,5 +27,12 @@ jobs:
 
       - name: Publish project
         run: dotnet publish ./potaooooo/potaooooo.csproj --configuration Release --output ./publish
+
+      - name: Deploy to webapp 
+        uses: azure/webapps-deploy@v2 
+        with:
+          app-name: ${{ env.AZURE_WEB_APP }}
+          publish-profile: ${{ secrets.AZURE_KEY }}
+          package: ./publish
 
 
